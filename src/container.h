@@ -28,6 +28,8 @@
 class Container;
 class DepotChest;
 class DepotLocker;
+class RewardChest;
+class Reward;
 
 class ContainerIterator
 {
@@ -71,6 +73,20 @@ class Container : public Item, public Cylinder
 			return nullptr;
 		}
 		virtual const DepotLocker* getDepotLocker() const {
+			return nullptr;
+		}
+
+		virtual RewardChest* getRewardChest() {
+			return nullptr;
+		}
+		virtual const RewardChest* getRewardChest() const {
+			return nullptr;
+		}
+
+		virtual Reward* getReward() {
+			return nullptr;
+		}
+		virtual const Reward* getReward() const {
 			return nullptr;
 		}
 
@@ -148,18 +164,20 @@ class Container : public Item, public Cylinder
 		void internalAddThing(uint32_t index, Thing* thing) override final;
 		void startDecaying() override final;
 
+		uint32_t maxSize;
+
+		bool unlocked;
+		bool pagination;
+
 	protected:
 		ItemDeque itemlist;
 
 	private:
 		std::ostringstream& getContentDescription(std::ostringstream& os) const;
 
-		uint32_t maxSize;
+		
 		uint32_t totalWeight = 0;
 		uint32_t serializationCount = 0;
-
-		bool unlocked;
-		bool pagination;
 
 		void onAddContainerItem(Item* item);
 		void onUpdateContainerItem(uint32_t index, Item* oldItem, Item* newItem);

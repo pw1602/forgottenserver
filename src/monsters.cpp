@@ -53,6 +53,17 @@ void MonsterType::createLoot(Container* corpse)
 		return;
 	}
 
+	if (info.isRewardBoss) {
+		auto timestamp = time(nullptr);
+		Item* rewardContainer = Item::CreateItem(ITEM_REWARD_CONTAINER);
+		rewardContainer->setIntAttr(ITEM_ATTRIBUTE_DATE, timestamp);
+		corpse->setIntAttr(ITEM_ATTRIBUTE_DATE, timestamp);
+		corpse->internalAddThing(rewardContainer);
+		corpse->setRewardCorpse();
+		corpse->startDecaying();
+		return;
+	}
+
 	Player* owner = g_game.getPlayerByID(corpse->getCorpseOwner());
 	if (!owner || owner->getStaminaMinutes() > 840) {
 		for (auto it = info.lootItems.rbegin(), end = info.lootItems.rend(); it != end; ++it) {

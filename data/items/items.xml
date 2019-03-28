@@ -15661,7 +15661,7 @@
 	<item id="8843" article="an" name="onion">
 		<attribute key="weight" value="140" />
 	</item>
-	<item id="8844" name="jalapeño pepper" article="a">
+	<item id="8844" name="jalapeï¿½o pepper" article="a">
 		<attribute key="weight" value="30" />
 	</item>
 	<item id="8845" article="a" name="beetroot">
@@ -17694,7 +17694,7 @@
 		<attribute key="description" value="This one would be quite healthy if it wasn't for all the melted cheese on top." />
 		<attribute key="weight" value="1100" />
 	</item>
-	<item id="9998" article="a" name="filled jalapeño peppers">
+	<item id="9998" article="a" name="filled jalapeï¿½o peppers">
 		<attribute key="description" value="The creamy cheese makes a great combination with the spicy peppers." />
 		<attribute key="weight" value="650" />
 	</item>
@@ -29322,6 +29322,12 @@
 	<item fromid="21514" toid="21515" article="a" name="strange shrine" />
 	<item id="21516" article="a" name="lift" />
 	<item id="21517" article="an" name="ornate door with a keyhole" />
+	<item id="21518" article="a" name="reward container">
+		<attribute key="weight" value="1800" />
+		<attribute key="containersize" value="32" />
+		<attribute key="pickupable" value="0" />
+		<attribute key="moveable" value="0" />
+	</item>
 	<item id="21536" article="a" name="hole">
 		<attribute key="floorchange" value="down" />
 	</item>
@@ -29376,6 +29382,13 @@
 	<item id="21569" name="gnomish supplies">
 		<attribute key="description" value="It contains the clothes of a dwarf." />
 		<attribute key="weight" value="800" />
+	</item>
+	<item id="21584" article="a" name="reward chest">
+		<attribute key="type" value="rewardchest" />
+		<attribute key="containerSize" value="32" />
+		<attribute key="description" value="This chest contains your rewards earned in battles." />
+		<attribute key="pickupable" value="0" />
+		<attribute key="moveable" value="0" />
 	</item>
 	<item id="21690" article="a" name="triple bolt crossbow">
 		<attribute key="weight" value="6200" />
